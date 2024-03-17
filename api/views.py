@@ -4,8 +4,8 @@ from django.contrib.auth.models import Group, User
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Topic, Post
-from .serializers import TopicSerializer, PostSerializer
+from .models import Topic, Record
+from .serializers import TopicSerializer, RecordSerializer
 
 # Create your views here.
 
@@ -16,7 +16,7 @@ class ListTopics(APIView):
         serializer = TopicSerializer(topics, many=True)
         return Response(serializer.data)
 
-    def post(self, request):
+    def Record(self, request):
         serializer = TopicSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

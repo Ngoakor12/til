@@ -1,6 +1,6 @@
 from django.contrib.auth.models import Group, User
 from rest_framework import serializers
-from .models import Topic, Post
+from .models import Topic, Record
 
 
 class TopicSerializer(serializers.ModelSerializer):
@@ -9,7 +9,7 @@ class TopicSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class PostSerializer(serializers.ModelSerializer):
+class RecordSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Post
+        model = Record
         fields = "__all__"
