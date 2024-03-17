@@ -13,7 +13,7 @@ class Topic(models.Model):
         return self.name
 
 
-class Post(models.Model):
+class Record(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.TextField(max_length=250)
     text = models.TextField(blank=True)
