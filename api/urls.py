@@ -16,9 +16,9 @@ Including another URLconf
 """
 
 from django.urls import path, include
-from .views import ListTopics, TopicDetail
+from .views import topic_list, topic_detail
 
 urlpatterns = [
-    path("topics/", ListTopics.as_view(), name="topics"),
-    path("topics/<int:pk>/", TopicDetail.as_view(), name="topic"),
+    path("topics/", topic_list, name="topics"),
+    path("topics/<int:pk>/", topic_detail, name="topic"),
 ]
